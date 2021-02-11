@@ -37,7 +37,8 @@ async function init () {
       sslClientCertList: split(get('sslClientCertList')),
       sslExtraCaCerts: get('sslExtraCaCerts'),
       requestAgents: safeParse(get('requestAgents')),
-      cookieJar: get('cookieJar')
+      cookieJar: get('cookieJar'),
+      globalVar: get('globalVar')
     }
 
     if (!options.apiKey) {
