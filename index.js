@@ -4,6 +4,7 @@ const newman = require('newman')
 init()
 
 async function init () {
+  console.log("gabeio newman gabeio")
   try {
     const get = core.getInput
     const required = { required: true }
