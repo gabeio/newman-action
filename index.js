@@ -53,7 +53,7 @@ async function init () {
       options.environment = `${apiBase}/environments/${options.environment}${options.apiKey}`
     }
 
-    console.log(globalVar)
+    console.log(options.globalVar)
 
     runNewman(options)
   } catch (error) {
