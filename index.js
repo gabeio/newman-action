@@ -48,6 +48,8 @@ async function init () {
       options.collection = `${apiBase}/collections/${options.collection}${options.apiKey}`
     }
 
+    console.log(options.environment)
+
     runNewman(options)
   } catch (error) {
     core.setFailed(error.message)
