@@ -1,6 +1,8 @@
 const core = require('@actions/core')
 const newman = require('newman')
 
+console.log('most basic test')
+
 init()
 
 async function init () {
