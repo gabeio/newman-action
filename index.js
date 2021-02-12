@@ -4,7 +4,6 @@ const newman = require('newman')
 init()
 
 async function init () {
-  console.log("gabeio newman gabeio")
   try {
     const get = core.getInput
     const required = { required: true }
@@ -38,8 +37,7 @@ async function init () {
       sslClientCertList: split(get('sslClientCertList')),
       sslExtraCaCerts: get('sslExtraCaCerts'),
       requestAgents: safeParse(get('requestAgents')),
-      cookieJar: get('cookieJar'),
-      globalVar: safeParse(get('globalVar'))
+      cookieJar: get('cookieJar')
     }
 
     if (!options.apiKey) {
@@ -53,8 +51,6 @@ async function init () {
     if (options.environment.match(idRegex)) {
       options.environment = `${apiBase}/environments/${options.environment}${options.apiKey}`
     }
-
-    console.log(options.globalVar)
 
     runNewman(options)
   } catch (error) {
