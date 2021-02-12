@@ -13,7 +13,7 @@ async function init () {
     const options = {
       apiKey: '?apikey=' + get('apiKey'),
       collection: get('collection', required),
-      environment: get('environment'),
+      environment: safeParse(get('environment')),
       globals: get('globals'),
       iterationCount: Number(get('iterationCount')),
       iterationData: get('iterationData'),
@@ -46,10 +46,6 @@ async function init () {
 
     if (options.collection.match(idRegex)) {
       options.collection = `${apiBase}/collections/${options.collection}${options.apiKey}`
-    }
-
-    if (options.environment.match(idRegex)) {
-      options.environment = `${apiBase}/environments/${options.environment}${options.apiKey}`
     }
 
     runNewman(options)
